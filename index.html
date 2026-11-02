@@ -12,6 +12,23 @@
       my site!"
     />
     <meta property="og:image" content="/background.jpg" />
+    <!-- Start fetching the background before the CSS is parsed. Keep in sync with App.scss. -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      href="/src/imgs/background-2560.avif"
+      media="(min-width: 901px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      href="/src/imgs/background-1600.avif"
+      media="(max-width: 900px)"
+      fetchpriority="high"
+    />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/

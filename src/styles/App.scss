@@ -20,12 +20,26 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: url("../imgs/background.jpg");
+  // Keep in sync with the preload links in index.html.
+  background-image: url("../imgs/background-2560.webp");
+  background-image: image-set(
+    url("../imgs/background-2560.avif") type("image/avif"),
+    url("../imgs/background-2560.webp") type("image/webp")
+  );
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   background-size: cover;
+
+  @media only screen and (max-width: 900px) {
+    background-image: url("../imgs/background-1600.webp");
+    background-image: image-set(
+      url("../imgs/background-1600.avif") type("image/avif"),
+      url("../imgs/background-1600.webp") type("image/webp")
+    );
+  }
 }
+
 
 .main-card {
   text-align: center;

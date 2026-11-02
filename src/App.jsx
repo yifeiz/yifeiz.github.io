@@ -1,4 +1,4 @@
-import profile from "./imgs/headshot.jpg";
+import profile from "./imgs/headshot.webp";
 
 import "./styles/App.scss";
 
