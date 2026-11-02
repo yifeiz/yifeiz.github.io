@@ -1,26 +1,11 @@
-import { useState } from "react";
-
 import profile from "./imgs/headshot.jpg";
-import background from "./imgs/background.jpg";
 
 import "./styles/App.scss";
 
 const App = () => {
-  const [loaded, setLoaded] = useState(false);
-  // TODO: Restart css animation (https://css-tricks.com/restart-css-animation/)
-
   return (
-    <div className={`home ${loaded ? `fade-in` : null}`}>
-      <img src={background} style={{ display: "none" }} alt="temp-background" />
-      <div className="drop" />
-      <div
-        className="wave"
-        onAnimationEnd={() => {
-          setLoaded(true);
-        }}
-      />
-
-      <div className={`main-card ${loaded ? `fade-in` : null}`}>
+    <div className="home">
+      <div className="main-card">
         <img className="profile-img" src={profile} alt="profile" />
         <div className="card-text">
           Hey there! My name is Yifei Zhang, and I'm a 4th year Software
@@ -31,7 +16,7 @@ const App = () => {
           <a href="https://se-webring.xyz/">here!</a>
         </div>
       </div>
-      <div className={`footer ${loaded ? `fade-in` : null}`}>
+      <div className="footer">
         <a
           href="https://github.com/yifeiz"
           target="_blank"
