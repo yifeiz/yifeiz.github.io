@@ -11,5 +11,6 @@ Source for [yifeiz.com](https://yifeiz.com). Built with React + Vite.
 
 ## Deploying
 
-The site is served from [yifeiz/yifeiz.github.io](https://github.com/yifeiz/yifeiz.github.io).
-Copy the contents of `dist/` into that repo (keep its `CNAME`) and push.
+Every push to `master` builds the site and deploys it to GitHub Pages via
+`.github/workflows/deploy.yml`. The custom domain is set in the repo's Pages
+settings (and mirrored in `public/CNAME`).
