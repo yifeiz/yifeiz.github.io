@@ -1,0 +1,99 @@
+// The moon fills the screen on the way in, so the arcade starts on moonlight.
+$moon: #fffdf6;
+$ink: #3d3561;
+$accent: #a59ecc;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: $ink;
+  background-color: $moon;
+}
+
+.arcade {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 15vh 24px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: arcade-in 0.8s ease both;
+
+  h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: normal;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 30px;
+    }
+  }
+}
+
+.tagline {
+  margin: 12px 0 48px;
+  font-size: 20px;
+  color: $accent;
+}
+
+.empty {
+  font-size: 18px;
+}
+
+.games {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 520px;
+  display: grid;
+  gap: 16px;
+
+  a {
+    display: block;
+    padding: 20px;
+    border: 1px solid $accent;
+    border-radius: 12px;
+    color: $ink;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba($accent, 0.15);
+    }
+  }
+}
+
+.game-title {
+  display: block;
+  font-size: 22px;
+}
+
+.game-description {
+  display: block;
+  margin-top: 4px;
+  color: rgba($ink, 0.7);
+}
+
+.home-link {
+  margin-top: auto;
+  padding-top: 48px;
+  color: $ink;
+  text-decoration: none;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+@keyframes arcade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

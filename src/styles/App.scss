@@ -15,6 +15,7 @@ a {
 }
 
 .home {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -40,6 +41,32 @@ a {
   }
 }
 
+.moon-egg {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  background: #fffdf6;
+  box-shadow: 0 0 12px 4px rgba(255, 253, 246, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s;
+  will-change: transform;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+
+  // Larger hover/touch target than the moon itself.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+  }
+
+  &.growing {
+    opacity: 1;
+  }
+}
 
 .main-card {
   text-align: center;

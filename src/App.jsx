@@ -1,10 +1,15 @@
+import MoonEgg from "./MoonEgg";
 import profile from "./imgs/headshot.webp";
 
 import "./styles/App.scss";
 
+const openArcade = () =>
+  window.location.assign(`${import.meta.env.BASE_URL}games/`);
+
 const App = () => {
   return (
     <div className="home">
+      <MoonEgg onComplete={openArcade} />
       <div className="main-card">
         <img className="profile-img" src={profile} alt="profile" />
         <div className="card-text">
