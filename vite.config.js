@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL("index.html", import.meta.url)),
         games: fileURLToPath(new URL("games/index.html", import.meta.url)),
+        snake: fileURLToPath(new URL("games/snake/index.html", import.meta.url)),
       },
     },
   },

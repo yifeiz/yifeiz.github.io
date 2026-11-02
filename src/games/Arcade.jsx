@@ -1,7 +1,13 @@
 import "../styles/Arcade.scss";
 
 // Add games here as they're built: { title, description, href }.
-const GAMES = [];
+const GAMES = [
+  {
+    title: "Snake",
+    description: "Eat the stars. Don't bite your tail.",
+    href: `${import.meta.env.BASE_URL}games/snake/`,
+  },
+];
 
 const Arcade = () => {
   return (

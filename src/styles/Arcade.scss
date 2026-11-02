@@ -1,16 +1,4 @@
-// The moon fills the screen on the way in, so the arcade starts on moonlight.
-$moon: #fffdf6;
-$ink: #3d3561;
-$accent: #a59ecc;
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  color: $ink;
-  background-color: $moon;
-}
+@use "moon" as *;
 
 .arcade {
   min-height: 100vh;
