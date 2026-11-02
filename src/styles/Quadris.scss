@@ -1,0 +1,237 @@
+@use "moon" as *;
+
+.quadris-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: quadris-in 0.6s ease both;
+
+  button {
+    font: inherit;
+    color: $ink;
+    background: white;
+    border: 1px solid $accent;
+    border-radius: 10px;
+    cursor: pointer;
+    touch-action: manipulation;
+
+    // Touch screens keep :hover after a tap, so only use it with a real pointer.
+    @media (hover: hover) {
+      &:hover {
+        background: rgba($accent, 0.15);
+      }
+    }
+
+    &:active {
+      background: rgba($accent, 0.25);
+    }
+  }
+}
+
+.quadris-header {
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: normal;
+  }
+}
+
+.quip {
+  margin: 4px 0 0;
+  color: $accent;
+}
+
+.quadris-main {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.quadris-board {
+  position: relative;
+  width: clamp(180px, min(58vw, calc((100vh - 300px) * 11 / 18)), 330px);
+  aspect-ratio: 11 / 18;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba($night, 0.25);
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.quadris-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: $moon;
+  background: rgba($night, 0.82);
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    margin-top: 12px;
+    padding: 8px 16px;
+  }
+}
+
+.overlay-title {
+  font-size: 26px;
+  color: $star;
+}
+
+.quadris-side {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media only screen and (max-width: 480px) {
+    width: 96px;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: $accent;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+
+.level-buttons {
+  display: flex;
+  gap: 6px;
+
+  button {
+    flex: 1;
+    padding: 2px 0;
+  }
+}
+
+.preview {
+  width: 100%;
+  aspect-ratio: 2;
+  border-radius: 8px;
+  background: $night;
+}
+
+.ai-toggle {
+  padding: 8px 4px;
+  font-size: 14px !important;
+
+  &.on {
+    color: $moon !important;
+    background: $ink !important;
+  }
+}
+
+.quadris-controls {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: min(100%, 466px);
+
+  button {
+    padding: 10px 0;
+    font-size: 20px;
+  }
+
+  // Drop, Hold, Hint and Play share the second row.
+  button:nth-child(n + 6) {
+    font-size: 15px;
+  }
+
+  button:nth-child(6) {
+    grid-column: span 2;
+  }
+}
+
+.quadris-console {
+  width: min(100%, 466px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    font: 15px ui-monospace, Menlo, monospace;
+    color: $ink;
+    border: 1px solid $accent;
+    border-radius: 8px;
+    background: white;
+
+    &:focus {
+      outline: 2px solid rgba($accent, 0.5);
+    }
+  }
+
+  output {
+    min-height: 1.2em;
+    font: 13px ui-monospace, Menlo, monospace;
+    color: rgba($ink, 0.7);
+  }
+}
+
+.quadris-help {
+  width: min(100%, 466px);
+  font-size: 14px;
+  line-height: 1.5;
+
+  summary {
+    cursor: pointer;
+    color: $accent;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+}
+
+.credit {
+  margin: 0;
+  font-size: 13px;
+  color: rgba($ink, 0.6);
+}
+
+.back-link {
+  color: $ink;
+  text-decoration: none;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+@keyframes quadris-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

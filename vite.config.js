@@ -11,6 +11,7 @@ export default defineConfig({
         main: fileURLToPath(new URL("index.html", import.meta.url)),
         games: fileURLToPath(new URL("games/index.html", import.meta.url)),
         snake: fileURLToPath(new URL("games/snake/index.html", import.meta.url)),
+        quadris: fileURLToPath(new URL("games/quadris/index.html", import.meta.url)),
       },
     },
   },

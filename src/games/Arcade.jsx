@@ -7,6 +7,11 @@ const GAMES = [
     description: "Eat the stars. Don't bite your tail.",
     href: `${import.meta.env.BASE_URL}games/snake/`,
   },
+  {
+    title: "Quadris",
+    description: "Our CS247 block-stacking project, back from the dead. rip cs247 🪦",
+    href: `${import.meta.env.BASE_URL}games/quadris/`,
+  },
 ];
 
 const Arcade = () => {
